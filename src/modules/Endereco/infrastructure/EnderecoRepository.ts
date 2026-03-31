@@ -31,7 +31,7 @@ export class EnderecoRepositury{
     async atualizarEndereco(endereco: Endereco){
 
          //BUSCANDO A POSIÇÃO EM QUE O DOCUMENTO SOLICITADO PARA ATUALIZAR ESTAR DENTRO DO ARRAY.
-        const indice = EnderecoRepositury.enderecos.findIndex(doc => doc.idEndereco === endereco.idEndereco);
+        const indice = EnderecoRepositury.enderecos.findIndex(end => end.idEndereco === endereco.idEndereco);
 
         if (indice !== -1){
             EnderecoRepositury.enderecos[indice] = endereco;

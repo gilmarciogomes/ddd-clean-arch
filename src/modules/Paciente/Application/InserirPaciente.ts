@@ -1,0 +1,20 @@
+
+
+import { Endereco } from "@/modules/Endereco/Domain/Endereco";
+import { Paciente } from "../Domain/Paciente";
+import { PacienteRepository } from "../infrastrutucture/PacienteRepository";
+
+
+
+export class inserirPaciente {
+
+    constructor(private repository = new PacienteRepository()) { }
+
+    async execute(id: number, nome: string, genero: string, idade: number, peso: number, altura: number, idDocumento: number, numeroDocumento: string, tipoDocumento: string, endereco: Endereco) {
+
+        const pac = new Paciente(id, nome, genero, idade, peso, altura, idDocumento, numeroDocumento, tipoDocumento, endereco);
+
+        await this.repository.inserirPaciente(pac);
+
+    }
+}

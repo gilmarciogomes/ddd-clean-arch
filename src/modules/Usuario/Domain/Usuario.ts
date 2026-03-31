@@ -1,5 +1,5 @@
-import { Documento } from "./Documento/Domain/Documento";
-import { Telefone } from "./Telefone/Domain/Telefone";
+import { Documento } from "@/modules/Documento/Domain/Documento"; 
+import { Telefone } from "@/modules/Telefone/Domain/Telefone"; 
 
 
 
