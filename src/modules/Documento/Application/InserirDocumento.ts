@@ -1,5 +1,5 @@
 import { Documento } from "../Domain/Documento";
-import { DocumentoRepository } from "../Infraestructure/DocumentoRepository";
+import { DocumentoRepository } from "../Infrastructure/DocumentoRepository";
 
 export class inserirDocumento{
 
@@ -11,7 +11,5 @@ export class inserirDocumento{
         const doc = new Documento(idDocumento, numeroDocumento, tipoDocumento);
 
         await this.repository.inserirDocumento(doc);
-
     }
-
 }

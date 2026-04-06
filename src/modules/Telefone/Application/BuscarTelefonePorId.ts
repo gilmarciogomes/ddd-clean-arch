@@ -1,12 +1,10 @@
-import { TelefoneRepositury } from "../infraestructure/TelefoneRepository";
+import { TelefoneRepository } from "../Infrastructure/TelefoneRepository";
 
-export class BbuscarTelefonePorId{
+export class BuscarTelefonePorId {
 
-    constructor(private repository = new TelefoneRepositury())
-    {}
+    constructor(private repository = new TelefoneRepository()) { }
 
-    async execute(idTelefone: number){
+    async execute(idTelefone: number) {
         return this.repository.buscarTelefonePorId(idTelefone);
-
     }
 }

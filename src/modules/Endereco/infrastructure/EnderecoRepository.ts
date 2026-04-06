@@ -1,41 +1,42 @@
 import { Endereco } from "../Domain/Endereco";
 
-export class EnderecoRepositury{
+export class EnderecoRepository{
 
     private static enderecos: Endereco[] = [];
 
-    //LISTAR ENDEREÇO:
-    async ListarEnderecos(){
-        return EnderecoRepositury.enderecos;
-
+    // LISTAR ENDERECOS:
+    async listarEnderecos(){
+        return EnderecoRepository.enderecos;
     }
 
-    //BUSCAR ENDEREÇO:
+
+    // BUSCAR ENDERECO:
     async buscarEnderecoPorId(idEndereco: number){
-        return EnderecoRepositury.enderecos.find(endereco => endereco.idEndereco ===idEndereco);
+        return EnderecoRepository.enderecos.find(endereco => endereco.idEndereco === idEndereco);
     }
 
-    //INSERIR ENDEREÇO:
+
+    // INSERIR NOVO ENDEREÇO
     async inserirEndereco(endereco: Endereco){
-        EnderecoRepositury.enderecos.push(endereco);
+        EnderecoRepository.enderecos.push(endereco);
     }
 
-    //REMOVER ENDEREÇO:
+
+    // REMOVER ENDEREÇO:
     async removerEndereco(idEndereco: number){
-        EnderecoRepositury.enderecos = EnderecoRepositury.enderecos.filter(endereco => endereco.idEndereco !== idEndereco);
-
+        EnderecoRepository.enderecos = EnderecoRepository.enderecos.filter(endereco => endereco.idEndereco !== idEndereco);
     }
 
-    
-    //ATUALIZAR ENDEREÇO:
-    async atualizarEndereco(endereco: Endereco){
 
-         //BUSCANDO A POSIÇÃO EM QUE O DOCUMENTO SOLICITADO PARA ATUALIZAR ESTAR DENTRO DO ARRAY.
-        const indice = EnderecoRepositury.enderecos.findIndex(end => end.idEndereco === endereco.idEndereco);
+    // ATUALIZAR ENDEREÇO:
+    async atualizarEndereco(enderco: Endereco) {
 
-        if (indice !== -1){
-            EnderecoRepositury.enderecos[indice] = endereco;
-        }else{
+        // Buscando a posição em que o documento solicitado para autualizar está dentro do array.
+        const indice = EnderecoRepository.enderecos.findIndex(end => end.idEndereco === enderco.idEndereco);
+
+        if (indice !== -1) {
+            EnderecoRepository.enderecos[indice] = enderco;
+        } else {
             console.log('Endereço não encontrado!');
         }
     }

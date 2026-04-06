@@ -1,13 +1,10 @@
+import { EnderecoRepository } from "../Infrastructure/EnderecoRepository";
 
-import { EnderecoRepositury } from "../infrastructure/EnderecoRepository";
+export class BuscarEnderecoPorId {
 
-export class BbuscarEnderecoPorId{
+    constructor(private repository = new EnderecoRepository()) { }
 
-    constructor(private repository = new EnderecoRepositury())
-    {}
-
-    async execute(idEndereco: number){
+    async execute(idEndereco: number) {
         return this.repository.buscarEnderecoPorId(idEndereco);
-
     }
 }

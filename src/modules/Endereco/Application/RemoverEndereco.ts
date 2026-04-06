@@ -1,11 +1,12 @@
-import { EnderecoRepositury } from "../infrastructure/EnderecoRepository";
+import { EnderecoRepository } from "../Infrastructure/EnderecoRepository";
 
-export class RemoverEndereco{
+export class RemoverEndereco {
 
-    constructor(private repository = new EnderecoRepositury())
-    {}
+    constructor(private repository = new EnderecoRepository()) { }
 
-    async execute(idEndereco: number){
+    async execute(idEndereco: number) {
+
         await this.repository.removerEndereco(idEndereco);
+
     }
 }

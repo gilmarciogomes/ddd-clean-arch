@@ -1,13 +1,11 @@
+import { DocumentoRepository } from "../Infrastructure/DocumentoRepository";
 
-import { DocumentoRepository } from "../Infraestructure/DocumentoRepository";
-
-export class listarDocumentos{
+export class ListarDocumentos{
 
     constructor(private repository = new DocumentoRepository())
     {}
 
     async execute(){
         return this.repository.listarDocumentos();
-        
     }
 }
